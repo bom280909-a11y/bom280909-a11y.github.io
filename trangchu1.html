@@ -1,11 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Trang chủ</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trang chủ - Đại học Đại Nam</title>
+
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #f9f9fb;
+      color: #333;
+    }
+
+    /* ==== Header ==== */
+    header {
+      background: linear-gradient(90deg, #ff6600, #ff944d);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav ul.menu {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      position: relative;
+    }
+
+    nav ul.menu > li {
+      position: relative;
+    }
+
+    nav ul.menu li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul.menu li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* ==== Submenu ==== */
+    .submenu {
+      list-style: none;
+      position: absolute;
+      background: white;
+      top: 35px;
+      left: 0;
+      min-width: 150px;
+      border-radius: 5px;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      z-index: 999;
+    }
+
+    .submenu li a {
+      display: block;
+      padding: 10px 15px;
+      color: #333;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .submenu li a:hover {
+      background: #ff944d;
+      color: white;
+    }
+
+    nav ul.menu li:hover .submenu {
+      display: block;
+    }
+
+    /* ==== Hero section ==== */
+    .hero {
+      background: url('https://cdn.dainam.edu.vn/uploads/images/2024/02/1708653243_dnu_it_lab.jpg') center/cover no-repeat;
+      text-align: center;
+      color: white;
+      padding: 120px 30px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h2, .hero p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 34px;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ==== Main content ==== */
+    main {
+      padding: 50px 80px;
+      text-align: center;
+    }
+
+    main h3 {
+      color: #ff6600;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    main p {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .btn {
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e65100;
+      transform: scale(1.05);
+    }
+
+    /* ==== Footer ==== */
+    footer {
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+
+    footer p span {
+      color: #ff944d;
+      font-weight: bold;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>trang chủ</h1>
+  <header>
+    <h1>Đại học Đại Nam</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="gioithieu.html">Giới thiệu</a></li>
+        <li><a href="#">Đào tạo</a>
+          <ul class="submenu">
+            <li><a href="#">Đại học</a></li>
+            <li><a href="#">Thạc sĩ</a></li>
+            <li><a href="#">Ngắn hạn</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Sinh viên</a>
+          <ul class="submenu">
+            <li><a href="#">Câu lạc bộ</a></li>
+            <li><a href="#">Học bổng</a></li>
+            <li><a href="#">Cơ hội việc làm</a></li>
+          </ul>
+        </li>
+        <li><a href="tintuc.html">Tin tức</a></li>
+        <li><a href="lienhe.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Chào mừng đến với Đại học Đại Nam</h2>
+    <p>Nơi ươm mầm tri thức, kết nối đam mê và kiến tạo tương lai trong kỷ nguyên số.</p>
+  </section>
+
+  <main>
+    <h3>Vì sao chọn Đại học Đại Nam?</h3>
+    <p>
+      Trường Đại học Đại Nam không chỉ là nơi cung cấp kiến thức, mà còn là môi trường khơi dậy sáng tạo, 
+      khuyến khích sinh viên trải nghiệm, nghiên cứu và làm việc thực tế. 
+      Với cơ sở vật chất hiện đại, đội ngũ giảng viên trẻ trung, năng động, 
+      Đại Nam hướng tới mục tiêu đào tạo những công dân toàn cầu bản lĩnh và sáng tạo.
+    </p>
+    <button class="btn">Tìm hiểu thêm</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 <span>Trường Đại học Đại Nam</span> — Tất cả các quyền được bảo lưu.</p>
+  </footer>
 </body>
 </html>
