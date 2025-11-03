@@ -1,11 +1,274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khoa Công Nghệ Thông Tin - Đại học Đại Nam</title>
+
+  <!-- === lam bt === -->
+  <style>
+    /* ==== Tổng thể ==== */
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #eef2f3;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ==== Header ==== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #004d40;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s, border-bottom 0.3s;
+      padding-bottom: 3px;
+    }
+
+    .menu li a:hover {
+      color: #a5d6a7;
+      border-bottom: 2px solid #a5d6a7;
+    }
+
+    /* ==== Hero ==== */
+    .hero {
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .overlay {
+      background: rgba(0, 77, 64, 0.6);
+      padding: 60px;
+      border-radius: 12px;
+    }
+
+    .overlay h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .overlay p {
+      font-size: 18px;
+      font-style: italic;
+    }
+
+    /* ==== Main container ==== */
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* ==== Phần giới thiệu ==== */
+    .intro h2 {
+      color: #00695c;
+      border-left: 5px solid #00695c;
+      padding-left: 10px;
+    }
+
+    .intro p {
+      margin-top: 10px;
+      text-align: justify;
+    }
+
+    /* ==== Ảnh minh họa ==== */
+    .image-section {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .image-section img {
+      width: 90%;
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .image-section img:hover {
+      transform: scale(1.03);
+    }
+
+    /* ==== Grid 2 cột ==== */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .grid-2 h3 {
+      color: #004d40;
+    }
+
+    .grid-2 ul {
+      list-style-type: circle;
+      padding-left: 20px;
+    }
+
+    /* ==== Bảng thông tin ==== */
+    .info {
+      margin-top: 40px;
+    }
+
+    .info h3 {
+      color: #004d40;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    .info-table th, .info-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .info-table th {
+      background-color: #00695c;
+      color: white;
+      width: 200px;
+    }
+
+    .info-table a {
+      color: #00796b;
+      text-decoration: none;
+    }
+
+    .info-table a:hover {
+      text-decoration: underline;
+    }
+
+    /* ==== Footer ==== */
+    .footer {
+      background-color: #00332c;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>hii</h1>
+
+<header class="header">
+  <div class="logo">Dai Nam University</div>
+  <nav>
+    <ul class="menu">  
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="gioithieu.html">Giới thiệu</a></li>
+      <li><a href="tintuc.html">Tin tức</a></li>
+      <li><a href="lienhe.html">Liên hệ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Banner -->
+<section class="hero" style="background-image:url('https://cdn.dainam.edu.vn/uploads/images/2024/02/1708653243_dnu_it_lab.jpg');">
+  <div class="overlay">
+    <h1>Khoa Công Nghệ Thông Tin</h1>
+    <p>Đổi mới – Sáng tạo – Dẫn đầu kỷ nguyên số</p>
+  </div>
+</section>
+
+<main class="container">
+  <section class="intro">
+    <h2>Giới thiệu Khoa CNTT - Đại học Đại Nam</h2>
+    <p>
+      Khoa Công nghệ Thông tin (CNTT) là một trong những khoa năng động và phát triển nhanh nhất của Đại học Đại Nam.
+      Với đội ngũ giảng viên trẻ trung, nhiệt huyết cùng chương trình đào tạo theo hướng ứng dụng, 
+      khoa hướng đến mục tiêu đào tạo những kỹ sư và cử nhân công nghệ có năng lực làm việc toàn cầu.
+    </p>
+    <p>
+      Sinh viên CNTT Đại Nam được học tập trong môi trường hiện đại, 
+      có cơ hội tiếp cận với doanh nghiệp, thực tập thực tế ngay từ năm thứ hai, 
+      và tham gia các dự án nghiên cứu, lập trình, AI, an ninh mạng, thiết kế phần mềm.
+    </p>
+  </section>
+
+  <!-- Hình minh họa -->
+  <div class="image-section">
+    <img src="anhlambt.jpg" alt="Sinh viên CNTT DNU">
+  </div>
+
+  <!-- Hai cột thông tin -->
+  <section class="grid-2">
+    <div>
+      <h3>Tầm nhìn & Sứ mệnh</h3>
+      <ul>
+        <li>Đào tạo sinh viên làm chủ công nghệ, hội nhập toàn cầu</li>
+        <li>Xây dựng môi trường học tập sáng tạo, thực hành và nghiên cứu</li>
+        <li>Trở thành khoa tiên phong trong chuyển đổi số giáo dục</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Giá trị cốt lõi</h3>
+      <ul>
+        <li>Tư duy sáng tạo – Hành động chuyên nghiệp</li>
+        <li>Hợp tác cùng phát triển – Học tập suốt đời</li>
+        <li>Trách nhiệm – Kỷ luật – Hội nhập</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Bảng thông tin -->
+  <section class="info">
+    <h3>Thông tin chung</h3>
+    <table class="info-table">
+      <tr><th>Năm thành lập</th><td>2007</td></tr>
+      <tr><th>Ngành đào tạo chính</th><td>Khoa học máy tính, Kỹ thuật phần mềm, Trí tuệ nhân tạo</td></tr>
+      <tr><th>Địa chỉ</th><td>Số 1 Phố Xốm, Phú Lãm, Hà Đông, Hà Nội</td></tr>
+      <tr><th>Website</th><td><a href="https://dainam.edu.vn" target="_blank">www.dainam.edu.vn</a></td></tr>
+    </table>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2025 Khoa Công Nghệ Thông Tin - Đại học Đại Nam</p>
+</footer>
+
 </body>
 </html>
