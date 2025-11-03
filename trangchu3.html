@@ -1,11 +1,281 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ - Khoa CNTT Đại học Đại Nam</title>
+
+  <style>
+    /* ===== Tổng thể ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #eef3f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ===== Header ===== */
+    header {
+      background: linear-gradient(90deg, #0d47a1, #1976d2);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav ul.menu {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul.menu li {
+      position: relative;
+    }
+
+    nav ul.menu li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 12px;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+    }
+
+    nav ul.menu li a:hover,
+    nav ul.menu li a.active {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* ===== Submenu ===== */
+    .submenu {
+      list-style: none;
+      position: absolute;
+      background: white;
+      top: 35px;
+      left: 0;
+      min-width: 150px;
+      border-radius: 6px;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      z-index: 10;
+    }
+
+    .submenu li a {
+      color: #333;
+      padding: 10px 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .submenu li a:hover {
+      background: #1976d2;
+      color: white;
+    }
+
+    nav ul.menu li:hover .submenu {
+      display: block;
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      background: url('https://cdn.dainam.edu.vn/uploads/images/2024/04/1712883034_z5323009580083-478e87a9b5f3c50e1621a5d6e7899cd0.jpg') center/cover no-repeat;
+      text-align: center;
+      color: white;
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h2 {
+      position: relative;
+      font-size: 36px;
+      z-index: 1;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero p {
+      position: relative;
+      z-index: 1;
+      font-size: 18px;
+    }
+
+    /* ===== Main Container ===== */
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h3 {
+      text-align: center;
+      color: #0d47a1;
+      margin-bottom: 10px;
+      font-size: 26px;
+    }
+
+    .container p {
+      text-align: center;
+      color: #555;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    /* ===== Form Liên hệ ===== */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form label {
+      font-weight: bold;
+      color: #0d47a1;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #1976d2;
+      box-shadow: 0 0 6px rgba(25, 118, 210, 0.3);
+      outline: none;
+    }
+
+    .btn {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #0d47a1;
+      transform: scale(1.03);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      background-color: #0d47a1;
+      color: #ccc;
+      padding: 20px;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+
+    footer p span {
+      color: #ffcc80;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+      nav ul.menu {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .container {
+        margin: 20px;
+        padding: 25px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    Trang chủ 3
+  <header>
+    <h1>Khoa CNTT - Đại học Đại Nam</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="gioithieu.html">Giới thiệu</a></li>
+        <li><a href="#">Đào tạo</a>
+          <ul class="submenu">
+            <li><a href="#">Cử nhân</a></li>
+            <li><a href="#">Kỹ sư</a></li>
+            <li><a href="#">Ngắn hạn</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Sinh viên</a>
+          <ul class="submenu">
+            <li><a href="#">Câu lạc bộ</a></li>
+            <li><a href="#">Học bổng</a></li>
+            <li><a href="#">Việc làm</a></li>
+          </ul>
+        </li>
+        <li><a href="tintuc.html">Tin tức</a></li>
+        <li><a href="lienhe.html" class="active">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Liên hệ với Khoa Công nghệ Thông tin</h2>
+    <p>Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn!</p>
+  </section>
+
+  <main class="container">
+    <h3>Gửi thông tin đến Khoa CNTT</h3>
+    <p>Vui lòng điền vào biểu mẫu dưới đây, chúng tôi sẽ phản hồi sớm nhất có thể.</p>
+
+    <form class="contact-form">
+      <label>Họ và tên</label>
+      <input type="text" placeholder="Nhập họ tên của bạn" required>
+
+      <label>Email</label>
+      <input type="email" placeholder="Nhập địa chỉ email" required>
+
+      <label>Chủ đề</label>
+      <input type="text" placeholder="Nhập tiêu đề liên hệ" required>
+
+      <label>Nội dung</label>
+      <textarea rows="5" placeholder="Viết nội dung bạn muốn gửi" required></textarea>
+
+      <button type="submit" class="btn">Gửi yêu cầu</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 <span>Khoa CNTT - Đại học Đại Nam</span>. Mọi quyền được bảo lưu.</p>
+  </footer>
 </body>
 </html>
